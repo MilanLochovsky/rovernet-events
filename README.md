@@ -1,2 +1,2 @@
 # RovernetEvents
-Test parsování akcí z rovernetu.
+Test parsování plánovaných a minulých akcí z kalendáře, který se nachází na rovernetu.
