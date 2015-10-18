@@ -17,18 +17,10 @@
             $arrayAkci = Array();
             
             foreach($urls as $url) {
-                //echo $url . "<br /><br />";
                 $json = file_get_contents($url);
                 $obj = json_decode($json);
-                //var_dump($obj);
                 foreach($obj as $o) {
-                    //var_dump($o);
                     array_push($arrayAkci, Array("nazev" => $o->title, "start" => strtotime($o->start), "konec" => strtotime($o->end), "url" => $o->url));
-                    //echo $o->title . "<br />";
-                    //echo $o->start . "<br />";
-                    //echo $o->end . "<br />";
-                    //echo $o->end . "<br />";
-                    //echo "<br />";
                 }
             }
             
@@ -37,7 +29,6 @@
             }
             
             usort($arrayAkci, "sortFunction");
-            //var_dump($arrayAkci);
             
             foreach($arrayAkci as $akce) {
                 if($akce['start'] > time()) {
